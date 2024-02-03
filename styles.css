@@ -1,16 +1,93 @@
+:root {
+    --blue-hsl-header: 200, 100%;
+    --box-shadow: 80, 10%;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
+.nav-container {
+    display: flex;
+    padding: 5px 0.5rem 0.5rem;
+    margin: 7px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+ul > div {
+    position: relative;
+    padding-top: 20px;
+    height: 40px;
+    width: 100px;
+}
+
+/*Formatting nav divs*/
+ul > div:first-child {
+    background-color: red;
+    box-shadow: 
+    0px 10px 20px -5px hsl(var(--box-shadow), 20%), 
+    0px 5px 10px -5px hsl(var(--box-shadow), 10%);
+}
+
+ul > div:nth-child(2) {
+    background-color: blue;
+    box-shadow: 
+    0px 10px 20px -5px hsl(var(--box-shadow), 20%), 
+    0px 5px 10px -5px hsl(var(--box-shadow), 10%);
+}
+
+ul > div:nth-child(3) {
+    background-color: green;
+    box-shadow: 
+    0px 10px 20px -5px hsl(var(--box-shadow), 20%), 
+    0px 5px 10px -5px hsl(var(--box-shadow), 10%);
+}
+
+ul > div:nth-child(4) {
+    background-color: orange;
+    box-shadow: 
+    0px 10px 20px -5px hsl(var(--box-shadow), 20%), 
+    0px 5px 10px -5px hsl(var(--box-shadow), 10%);
+}
+
+/*Transitions for nav divs*/
+ul > div:hover:first-child {
+    top: 0;
+    box-shadow: none;
+}
+
+.nav-container ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.nav-container li {
+    list-style-type: none;
+    text-align: center;
+    color: hsl(var(--blue-hsl-header), 70%);
+}
+
 header {
     width: 100%;
     height: 100px;
-    background-color: hsl(200, 90%, 30%);
+    background-color: hsl(var(--blue-hsl-header), 40%);
+    padding: 30px;
+}
+
+header h1 {
     color: white;
     text-align: center;
-    padding: 40px;
+    text-shadow: 
+    3px 3px 0 black,
+    -3px 3px 0 black;
+}
+
+hr {
+    width: 50%;
 }
 
 footer {
