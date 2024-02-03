@@ -1,5 +1,5 @@
 :root {
-    --global-color-value: 40, 15%;
+    --global-color-value: 40, 100%;
     --box-shadow: 250, 5%;
 }
 
@@ -7,13 +7,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden; /*Hides horizontal scrollbar, could possible change width values to fix*/
 }
 
 .nav-container {
     display: flex;
     padding: 5px 0.5rem 0.5rem;
     margin: 7px;
-    margin-left: 500px;
+    margin-left: 500px; /*Centering nav bar*/
     border-radius: 10px;
 }
 
@@ -36,7 +37,7 @@ ul > div {
 ul > div:hover {
     bottom: 0px;
     box-shadow: none;
-    background-color: hsl(var(--global-color-value), 25%);
+    background-color: hsl(var(--global-color-value), 30%);
     transform: scale(1.3, 1.2);
     box-shadow: 
     0px 10px 10px hsl(var(--box-shadow), 30%), 
@@ -59,7 +60,8 @@ ul > div:hover {
     bottom: 20px;
     list-style-type: none;
     text-align: center;
-    color: hsl(var(--global-color-value), 30%);
+    font-weight: bold;
+    color: hsl(var(--global-color-value), 40%);
     transition: color 0.5s ease; /* Transition back to default text color*/
 }
 
@@ -73,12 +75,72 @@ ul > div:hover {
 }
 
 .main-container img {
-    padding-left: 200px;
+    padding-left: 150px;
     width: 75%;
 }
 
 .main-container main {
-    margin: 2rem 6rem;
+    margin: 2rem 8rem; /*narrowing margins of content*/
+}
+
+
+.main-container h2 {
+    color: hsl(var(--global-color-value), 50%);
+    transition: color 1s;
+}
+
+.main-container p {
+    color: hsl(var(--global-color-value), 20%);
+    transition: color 1s;
+}
+
+/*first set of paragraphs in div*/
+.first-heading {
+    position: relative;
+    left: 0px;
+    padding: 5px 1rem 1rem; /*padding to center and position before transition*/
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 1s ease, background-color 0.8s ease, left 0.8s ease;
+}
+
+/*This hover to control background and transforming*/
+.first-heading:hover {
+    left: 25px;
+    transform: scale(1.05);
+    padding: 5px 2rem 1rem;
+    background-color: hsl(var(--global-color-value), 30%);
+    transition: transform 1s ease, background-color 0.8s ease, left 0.8s ease;
+}
+
+/*Hovering over div also transitions p and h2 elements to white text*/
+.first-heading:hover p, .first-heading:hover h2 {
+    color: hsl(var(--global-color-value), 90%);
+    transition: color 1s;
+}
+
+/*second set of paragraphs in div*/
+.second-heading {
+    position: relative;
+    top: 25px; /*Spacing between top and bottom div*/
+    left: 0px;
+    padding: 5px 1rem 1rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 1s ease, background-color 0.8s ease, left 0.8s ease;
+}
+
+.second-heading:hover {
+    left: 25px;
+    transform: scale(1.05);
+    padding: 5px 2rem 1rem;
+    background-color: hsl(var(--global-color-value), 30%);
+    transition: transform 1s ease, background-color 0.8s ease, left 0.8s ease;
+}
+
+.second-heading:hover p, .second-heading:hover h2 {
+    color: hsl(var(--global-color-value), 90%);
+    transition: color 1s;
 }
 
 header {
@@ -97,11 +159,14 @@ header h1 {
     -3px 3px 5px black;
 }
 
+/*Visible top border, adjusted to 95% width*/
 hr {
-    width: 75%;
+    width: 95%;
 }
 
 footer {
+    color: hsl(var(--global-color-value), 20%);
+    padding-top: 20px; /*padding between second div/paragraphs and footer*/
     position: relative;
     text-align: center;
 }
