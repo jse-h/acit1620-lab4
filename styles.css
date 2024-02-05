@@ -170,6 +170,8 @@ hr {
 }
 
 footer {
+    position: relative;
+    height: 120px;
     color: hsl(var(--global-color-value), 20%);
     padding-top: 20px; /*padding between second div/paragraphs and footer*/
     text-align: center;
